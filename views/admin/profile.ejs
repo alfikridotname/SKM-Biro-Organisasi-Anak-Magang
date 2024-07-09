@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Profile</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/admin/profile.css">
+    <script src="/js/profile.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <div class="grid-container">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="menu-icon" onclick="openSidebar()">
+                <span class="material-icons-outlined">menu</span>
+            </div>
+            <div class="header-right d-flex" style="margin-left: auto;">
+                <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
+                        id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="/img/user.png" alt="" width="40" class="rounded-circle me-2">
+                    </a>
+                    <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+                        <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                        <li>
+                            <hr style="color: black;">
+                        </li>
+                        <li><a type="button" class="dropdown-item" id="logout">Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside id="sidebar" style="z-index: 1;">
+            <div class="sidebar-title mx-auto mb-3">
+                <span class="mt-2 me-2" onclick="closeSidebar()"><svg xmlns="http://www.w3.org/2000/svg" width="18"
+                        height="18" viewBox="0 0 48 48">
+                        <path fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"
+                            d="m8 8l32 32M8 40L40 8" /></svg></span>
+                <a href="/dashboard"
+                    class="h6-title d-flex align-items-center mt-3 mb-md-0 me-md-auto link-light text-decoration-none">
+                    <img src="/img/pemprovsumbar.png" width="60" height="32" class="img-fluid" alt="pemprovsumbar">
+                    <h6 class="mt-2 ms-2 fw-bold">Survey Kepuasan<br><span>Masyarakat</span> <br><span>Biro
+                            Organisasi</span> </h6>
+                </a>
+            </div>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="sidebar-list-item">
+                    <a href="/dashboard" class="nav-link link-light mt-1" aria-current="page">
+                        Dashboard
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="/hasilSurvey" class="nav-link link-light mt-1">
+                        Hasil Survey
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="/riwayatSurvey" class="nav-link link-light mt-1">
+                        Generate Laporan
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main -->
+        <main class="main-container mb-4">
+            <h3>Profil Saya</h3>
+            <p>Silahkan lakukan perubahan pada profile.</p>
+
+            <div class="main-container">
+                <form class="row gx-3 gy-2 align-items-center">
+                    <div class="col-sm-4 align-self-start" style="position: relative; margin-top: 8%;">
+                        <img src="/img/user.png" class="img-fluid profile img-thumbnail rounded-circle me-2"
+                            alt="profile" id="pp">
+                        <div class="position-absolute top-0 translate-midle-x" style="margin-left: 43%; z-index: 1;">
+                            <input type="file" id="fileInput" style="display: none;" />
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACjUlEQVR4nO2Yu2tUQRTGf9H4QHM1gqig4CtkEQkmgoUQG/8AKxFstFA7H/gsZNH8A4JFGmtBVJIqID5wK412KQSNhWAjKJgFE4MPjMrAWVjGs3tn78zdvZH54DR7d85839xvzpm5EBEREfE/YTdwDXgMfAC+AfPAe6ACXAf2UUDsB54CfxzjJXCIAmAFMAostEC+PsaADZ0ivx54kZF4fbwD+tpNfh0wpZD5DtwGDgNbgZXAamAncBS4A/xUxn0EtrWL/BLggULiPrDFYbwRNq6MnwJW5UHYTHgemABeAVVrYuP/0xnyngN+W7luhCQ+0GCl7TjjMccFK9cPoN+X+FJZiV8O5I0VfDFh5bzlk2wt8NCxenwFNgcQsN1arC+y8VtGt3RQjewj4ARQkuSm/ieEw5g134xsalO1jrgKuqkQfwMMkz+Op7ztz8BZYFmjBHuVilARS/lgRCINOxxt+6xR536irHwI8rV8Iw69Zb6Fzr2xfnBJ+dNwQPKuIg5K6V4jnt8DXJUubed6DiyvDbyibNjQ5F1FaOgB7iq5LjWyj6k2eZD3EdGliJip2fyt9aCUI3kfEYlip2Pmwaz1Y5IzeR8RZe0k4CsgC/msIgat8dMhLWTDJhsCiZVzVtvEJxebgMuBy2ieAgY1C/Urkx0oqICytolRTqFGWW/BBCTAJ62MGgwpn0YqniJCCugC7ln5qvZ5TTtOT3vYKZSARCFv4qJ2obErUi2MxU4Bu+RskreAHnFFWbGNiUm5VP2D3iYi0qJVAVmbn/nOuqmZ+m6x00IBBUymka/HUJM7crsFVMXzqm3S0CfNzjS418BcGwTMya1wXEql7+2wo1WoY4gCOo1F/wYiIiIiSMVfD1cf3ZqWOvIAAAAASUVORK5CYII="
+                                onclick="document.getElementById('fileInput').click();">
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <h3 style="font-weight: bolder;text-align: center;" id="namaAdmin"></h3>
+                        <label for="inputUsername" class="form-label mt-3">Username</label>
+                        <input type="text" class="form-control in-profile" id="username" required>
+                        <label for="inputNama" class="form-label mt-3">Nama</label>
+                        <input type="text" class="form-control in-profile" id="nama" required>
+                        <label for="inputEmail" class="form-label mt-3">Email</label>
+                        <input type="email" class="form-control in-profile" id="email" aria-describedby="emailHelp"
+                            required>
+                        <div class="row gx-3 gy-2 align-items-center mt-2 mb-2">
+                            <div class="col-sm-6">
+                                <label for="inputJenisKelamin" class="form-label mt-2">Password Lama</label>
+                                <input type="password" class="form-control in-profile" id="password"
+                                    aria-describedby="passwordlHelp" placeholder="Masukkan Password Lama">
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="inputJenisKelamin" class="form-label mt-2">Password Baru</label>
+                                <input type="password" class="form-control in-profile" id="newPassword"
+                                    aria-describedby="passwordlHelp" placeholder="Masukkan Password Baru">
+                            </div>
+                        </div>
+                        <div class="text-center mb-4 mt-4">
+                            <button type="submit" class="btn btn-warning save" id="simpanProfil">Save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script src="/js/script.js"></script>
+
+</body>
+
+</html>

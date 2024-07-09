@@ -1,0 +1,70 @@
+@import url('https://fonts.cdnfonts.com/css/open-sans-condensed-2');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Purple+Purse&display=swap');
+
+.navbar {
+    background-color: #015B7C;
+}
+
+span {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+}
+
+main {
+    padding: 4%;
+    font-family: 'Poppins';
+}
+
+.sub-main {
+    margin-top: 2%;
+    padding: 0 16% 0 16%;
+    text-align: center;
+}
+
+.span{
+    color: black;
+    font-weight: 200;
+    font-size: 14px;
+    margin-left: 4px;
+    font-family: 'Poppins';
+}
+
+h4 {
+    font-weight: bold;
+}
+
+.input{
+    border-radius: 10px;
+    width: 100%;
+    background-color: #f8f8f8;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+}
+
+.btn-danger{
+    margin-top: 2%;
+    background-color: #E13E38;
+    border-radius: 30px;
+    font-weight: 600;
+}
+
+.background{
+    bottom: 0; 
+    width: 100%; 
+    display:block; 
+    position: fixed; 
+    opacity: 24%;
+}
+
+.sub-main-thankyou{
+    margin-top: 6%;
+    padding: 0 16% 0 16%;
+    text-align: center;
+}
+
+

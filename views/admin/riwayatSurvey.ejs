@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Riwayat Survey</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/admin/hasilSurvey.css">
+    <script src="/js/riwayatSurvey.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <div class="grid-container">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="menu-icon" onclick="openSidebar()">
+                <span class="material-icons-outlined">menu</span>
+            </div>
+            <div class="header-right d-flex" style="margin-left: auto;">
+                <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
+                        id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="/img/user.png" alt="" width="40" class="rounded-circle me-2">
+                    </a>
+                    <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+                        <li><a class="dropdown-item" href="/profile">Profile</a></li>
+                        <li>
+                            <hr style="color: black;">
+                        </li>
+                        <li><a type="button" class="dropdown-item" id="logout">Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside id="sidebar" style="z-index: 1;">
+            <div class="sidebar-title mx-auto mb-3">
+                <span class="mt-2 me-2" onclick="closeSidebar()"><svg xmlns="http://www.w3.org/2000/svg" width="18"
+                        height="18" viewBox="0 0 48 48">
+                        <path fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"
+                            d="m8 8l32 32M8 40L40 8" /></svg></span>
+                <a href="dashboard.html"
+                    class="h6-title d-flex align-items-center mt-3 mb-md-0 me-md-auto link-light text-decoration-none">
+                    <img src="/img/pemprovsumbar.png" width="60" height="32" class="img-fluid" alt="pemprovsumbar">
+                    <h6 class="mt-2 ms-2 fw-bold">Survey Kepuasan<br><span>Masyarakat</span> <br><span>Biro
+                            Organisasi</span> </h6>
+                </a>
+            </div>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="sidebar-list-item">
+                    <a href="/dashboard" class="nav-link link-light mt-1">
+                        Dashboard
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="/hasilSurvey" class="nav-link link-light mt-1">
+                        Hasil Survey
+                    </a>
+                </li>
+                <li style="padding: 2%;">
+                    <a href="/riwayatSurvey" class="nav-link dashboard mt-1" aria-current="page">
+                        Generate Laporan
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main -->
+        <main class="main-container mb-4">
+            <h3>Generate Laporan</h3>
+            <p>Berikut adalah laporan hasil Survey Kepuasan Masyarakat.</p>
+
+            <div class="sub-main">
+                <div class="d-flex mb-5">
+                    <div class="me-3" style="margin-left: auto;">
+                        <h6>Periode Awal</h6>
+                        <input class="date" type="date" id="periode_awal">
+                    </div>
+                    <div class="me-3">
+                        <h6>Periode Akhir</h6>
+                        <input class="date" type="date" id="periode_akhir">
+                    </div>
+                    <button id="cariHasil" type="button" class="btn btn-danger">Generate</button>
+                </div>
+
+                <table class="table table-borderless">
+                    <thead style="background-color: #EFD39C;">
+                        <tr>
+                            <th class="col-1" style="border-top-left-radius: 20px;">No</th>
+                            <th class="col-3">Periode</th>
+                            <th class="col-3">Akumulasi Penilaian</th>
+                            <th class="col-3" style="border-top-right-radius: 20px;">Nama File</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="8"> Silahkan pilih periode terlebih dahulu</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </main>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script src="/js/script.js"></script>
+
+</body>
+
+</html>
